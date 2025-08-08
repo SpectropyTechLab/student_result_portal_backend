@@ -42,7 +42,7 @@ export async function WholeclassResults(req, res) {
     const mathsCol = findSubjectIndex("Maths");
     const biologyCol = findSubjectIndex("Biology");
 
-    const excelData = data.slice(1); // skip header row
+    const excelData = data;
 
     // ✅ Step 2: Map Data
     const refinedData = excelData.map(entry => {
