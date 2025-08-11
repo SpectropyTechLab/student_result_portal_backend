@@ -27,6 +27,11 @@ export async function WholeclassResults(req, res) {
     if (data.length === 0) return res.status(400).json({ error: 'No data found in the file' });
 
     const headerRow = data[0];
+    const ID = Number(headerRow["Roll No"].slice(0, 2));
+
+    // console.log("ID :", ID);
+    // console.log("schoolID :", schoolId);
+    if(parseInt(schoolId)!==ID) return res.status(400).json({ error: "School ID and rollNo aren't matching please upload correct file" });
     const headerKeys = Object.keys(headerRow);
 
     const findSubjectIndex = (subject) => {
