@@ -32,7 +32,7 @@ export async function WholeclassResults(req, res) {
     const classNumber = Number(headerRow["Roll No"].slice(2, 3));
 
     // console.log("ID :", ID);
-    console.log("schoolID :", schoolId);
+    // console.log("schoolID :", schoolId);
     if (parseInt(schoolId) !== ID) return res.status(400).json({ error: "School ID and rollNo aren't matching please upload correct file" });
     else {
       if(classNumber!== parseInt(classValue)) return res.status(400).json({ error: "Class number and class value aren't matching please upload correct file" });
